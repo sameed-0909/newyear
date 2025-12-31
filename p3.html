@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your 2025</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  height:100vh;
+  font-family:'Nunito',sans-serif;
+  background:radial-gradient(circle at top,#1a1a40,#050014);
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  text-align:center;
+}
+
+/* Floating glow blobs */
+.blob{
+  position:absolute;
+  width:200px;
+  height:200px;
+  background:radial-gradient(circle,#ff9a9e,#fad0c4);
+  opacity:0.25;
+  filter:blur(60px);
+  animation:float 12s ease-in-out infinite;
+}
+
+.blob:nth-child(1){top:10%;left:10%}
+.blob:nth-child(2){bottom:10%;right:15%;animation-delay:4s}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-60px)}
+}
+
+.container{
+  z-index:2;
+  max-width:500px;
+  padding:30px;
+}
+
+/* Arrival animations */
+@keyframes slideFadeIn{
+  0%{opacity:0; transform:translateY(30px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  font-size:clamp(2rem,5vw,2.8rem);
+  opacity:0;
+  animation:slideFadeIn 1s ease forwards;
+  animation-delay:0.5s;
+}
+
+p{
+  font-size:1.1rem;
+  opacity:0;
+  animation:slideFadeIn 1s ease forwards;
+  animation-delay:1.2s;
+  margin-bottom:30px;
+}
+
+input, button{
+  opacity:0;
+  transform:translateY(20px);
+  animation:slideFadeIn 0.8s ease forwards;
+}
+
+input{
+  width:100%;
+  padding:14px 18px;
+  border:none;
+  border-radius:30px;
+  font-size:1rem;
+  outline:none;
+  text-align:center;
+  margin-bottom:20px;
+  animation-delay:2s;
+}
+
+button{
+  padding:14px 40px;
+  border:none;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ffd36e,#ff7eb3);
+  color:#000;
+  animation-delay:2.6s;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.07);
+}
+
+.message{
+  margin-top:35px;
+  font-size:1.4rem;
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<div class="blob"></div>
+<div class="blob"></div>
+
+<div class="container">
+  <h1>Before 2025 begins…</h1>
+  <p>Tell me who’s stepping into it.</p>
+
+  <input id="nameInput" type="text" placeholder="Enter your name ✨">
+  <button onclick="showWish()">Reveal My Wish</button>
+  <a href="p4.html"><button onclick="showWish()">Next</button></a>
+
+
+  <div id="wish" class="message"></div>
+</div>
+
+<script>
+function showWish(){
+  const name=document.getElementById("nameInput").value.trim();
+  const wish=document.getElementById("wish");
+
+  if(!name){
+    wish.innerText="Don’t be shy — your name matters here 🙂";
+  }else{
+    wish.innerText=`${name}, may 2025 be kinder to you than you expect — and stronger than you imagine. 🌟`;
+  }
+
+  wish.classList.add("show");
+}
+</script>
+
+</body>
+</html>

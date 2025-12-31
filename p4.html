@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 4 - Pink Celebration</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  height:100vh;
+  font-family:'Nunito',sans-serif;
+  background:#ffd6e8; /* Pink theme */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  text-align:center;
+  position:relative;
+}
+
+.like{
+
+}
+
+/* Background emojis */
+.emoji{
+  position:absolute;
+  font-size:24px;
+  user-select:none;
+  pointer-events:none;
+}
+
+/* Floating PNG images */
+.png-img{
+  position:absolute;
+  max-width:80px;
+  pointer-events:none;
+  animation:float 4s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+  0%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-15px) rotate(5deg);}
+  100%{transform:translateY(0) rotate(-5deg);}
+}
+
+/* Central card */
+.card{
+  background:rgba(255,255,255,0.9);
+  padding:30px 25px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  text-align:center;
+  opacity:0;
+  transform:translateY(50px);
+  transition:all 1s ease;
+  z-index:5;
+  max-width:90%;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+button{
+  margin-top:15px;
+  padding:12px 28px;
+  border:none;
+  border-radius:25px;
+  font-size:1rem;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ff85c1,#ff2d99);
+  color:#fff;
+  transition:.3s;
+}
+
+.like{
+  margin-left: px;
+}
+
+button:hover{transform:scale(1.05);}
+</style>
+</head>
+<body>
+
+<!-- Background emojis -->
+<div class="emoji" style="top:5%; left:5%;">🎉</div>
+<div class="emoji" style="top:10%; left:80%;">✨</div>
+<div class="emoji" style="top:15%; left:50%;">💖</div>
+<div class="emoji" style="top:25%; left:20%;">🎊</div>
+<div class="emoji" style="top:30%; left:70%;">🌸</div>
+<div class="emoji" style="top:35%; left:10%;">💫</div>
+<div class="emoji" style="top:40%; left:60%;">🎶</div>
+<div class="emoji" style="top:45%; left:80%;">🥳</div>
+<div class="emoji" style="top:55%; left:30%;">🎀</div>
+<div class="emoji" style="top:65%; left:50%;">💌</div>
+<div class="emoji" style="top:75%; left:20%;">🌟</div>
+<div class="emoji" style="top:80%; left:70%;">🎈</div>
+<div class="emoji" style="top:85%; left:40%;">💎</div>
+<div class="emoji" style="top:20%; left:35%;">💖</div>
+<div class="emoji" style="top:60%; left:15%;">✨</div>
+
+<div class="like">
+<img class="png-img" src="1.png" style="top:5%; left:10%;">
+<img class="png-img" src="2-removebg-preview.png" style="top:15%; left:70%;">
+<img class="png-img" src="3.png" style="top:60%; left:5%;">
+<img class="png-img" src="4.png" style="top:50%; left:60%;">
+<img class="png-img" src="5.png" style="top:80%; left:20%;">
+<img class="png-img" src="6.png" style="top:25%; left:40%;">
+<img class="png-img" src="7.png" style="top:35%; left:80%;">
+<img class="png-img" src="8.png" style="top:70%; left:50%;">
+<img class="png-img" src="9.png" style="top:10%; left:50%;">
+<img class="png-img" src="10.png" style="top:75%; left:70%;">
+<img class="png-img" src="11.png" style="top:20%; left:30%;">
+<img class="png-img" src="12.png" style="top:40%; left:15%;">
+<img class="png-img" src="13.png" style="top:65%; left:80%;">
+<img class="png-img" src="14.png" style="top:55%; left:70%;">
+<img class="png-img" src="15.png" style="top:35%; left:55%;">
+</div>
+
+<!-- Central card -->
+<div class="card" id="card">
+  <audio controls>
+    <source src="your-audio-file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <br>
+  <a href="p5.html"><button onclick="nextPage()">Next Page ➡️</button></a>
+</div>
+
+<script>
+// Arrival animation for card
+window.addEventListener("load", ()=>{
+  const card=document.getElementById("card");
+  setTimeout(()=>{card.classList.add("show");},500);
+});
+
+// Navigation placeholder
+function nextPage(){
+ 
+}
+</script>
+
+</body>
+</html>

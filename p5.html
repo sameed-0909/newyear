@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Page - Happy New Year</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body, html{
+  height:100%;
+  font-family:'Nunito',sans-serif;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  background:#000;
+}
+
+/* Fullscreen video */
+video#bgVideo{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1;
+}
+
+/* Overlay central container */
+.overlay{
+  position:relative;
+  z-index:5;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+
+/* Central message */
+.message{
+  font-size:3rem;
+  font-weight:700;
+  text-shadow:0 0 10px rgba(0,0,0,0.7);
+  opacity:0;
+  transform:scale(0.8);
+  transition:all 1s ease;
+}
+
+/* Show class for animation */
+.message.show{
+  opacity:1;
+  transform:scale(1);
+}
+
+button{
+  margin-top:20px;
+  padding:15px 35px;
+  font-size:1.2rem;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ffd36e,#ff7eb3);
+  color:#000;
+  transition:.3s;
+}
+
+button:hover{transform:scale(1.05);}
+</style>
+</head>
+<body>
+
+<video id="bgVideo" autoplay muted loop>
+  <source src="🎇 Happy New Year 2026 4K  Stunning Celebration Video with Fireworks, Wishes & Golden Text - AllDesignCreative (720p, h264, youtube).mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+<script>
+// Arrival animation
+window.addEventListener("load", ()=>{
+  const message = document.getElementById("message");
+  setTimeout(()=>{message.classList.add("show");},500);
+});
+
+// Restart function
+function restartPage(){
+  location.reload();
+}
+</script>
+
+</body>
+</html>
